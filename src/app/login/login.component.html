@@ -1,0 +1,44 @@
+<div class="login-page-conatiner">
+    <div class="login-page-body">
+        <section class="login-page-sidebody">
+            <img class="login-page-logo" src="/FeatherList.png" alt="Logo">
+        </section>
+        <div class="login-page-mainbody">
+            <h2>Welcome!</h2>
+            <form action="" *ngIf="isForgot == false">
+                <section class="section-input">
+                  
+                    <app-input-box 
+                    name="Username" 
+                    placeholder = "Enter your username"
+                    widthPx = "400px"
+                    />
+                    <app-input-box 
+                    name="Password" 
+                    placeholder = "Enter your password"
+                    widthPx = "400px"
+                    />
+                    <a href="javascript:void(0)" class="ref-link ref-link-side" (click)="forgotPass()">Forgot password?</a>
+                </section>
+                <section class="section-controls">
+                    <button type="button" class=" button secondary-button ">Register</button>
+                    <button type="submit" class="button primary-button ">Log In</button>
+                </section>
+            </form>
+            <form action="" *ngIf="isForgot == true">
+                <section class="">
+                    <app-input-box 
+                    name="Enter Email" 
+                    placeholder = "Enter your username"
+                    widthPx = "250px"
+                    />
+                    <app-input-box 
+                    name="Username" 
+                    placeholder = "Enter your username"
+                    widthPx = "250px"
+                    />
+                </section>
+            </form>
+        </div>
+    </div>
+</div>

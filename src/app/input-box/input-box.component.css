@@ -1,0 +1,76 @@
+
+.input-container{
+    padding: .5em;
+    border-radius: 5px;
+    background-color: #EEEEEE;
+    width: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-top: 1.5em;
+}
+
+.input-container:hover .input-name{
+    color: var(--purple);
+    transition: .2s;
+}
+
+.input-name, .input-container, .input-box{
+    cursor:text;
+    color: var(--semiblack);
+}
+
+.input-box{
+    padding-top: .5em;
+    border: 0;
+    background-color: transparent;
+    font-family: 'roboto';
+    text-indent: .5em;
+
+}
+.input-box:active{
+    border: 0;
+}
+.input-box:focus{
+    border: 0;
+    outline: 0;
+
+}
+
+.input-container.focused .input-name {
+    font-weight: bolder;
+    color: #4E5166;  
+    letter-spacing:.05em;
+    animation-name: bolded;
+    animation-duration: .2s;
+
+  }
+.input-container:not(focused) .input-name {
+
+    animation-name: unbolded;
+    animation-duration: .2s;
+
+  }
+
+  @keyframes bolded{
+    from{
+        letter-spacing: normal;
+        font-weight: 500;
+    }
+    to{
+        letter-spacing:.05em;
+        font-weight: 900;
+    }
+}
+@keyframes unbolded{
+    from{
+        letter-spacing:.05em;
+        font-weight: 900;
+        
+    }
+    to{
+        letter-spacing: normal;
+        font-weight: 500;
+    }
+}
+
