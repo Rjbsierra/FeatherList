@@ -176,11 +176,18 @@ h1{
     color: var(--purple);
     text-decoration: none;
     font-size: 12px;
+    transition: ease-in-out .1s;
+}
+
+.ref-link:hover{
+    color: var(--purple-highlight);
 }
 
 .ref-link-side{
     margin-left: auto;
 }
+
+
 
 .section-input{
     display: flex;

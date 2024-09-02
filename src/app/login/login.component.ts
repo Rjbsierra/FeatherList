@@ -12,8 +12,8 @@ export class LoginComponent {
 
   isForgot : boolean = false;
 
-  forgotPass(){
-    this.isForgot = true;
+  forgotPass(isForgot : boolean){
+    this.isForgot = isForgot;
   }
 
 }

@@ -18,7 +18,7 @@
                     placeholder = "Enter your password"
                     widthPx = "400px"
                     />
-                    <a href="javascript:void(0)" class="ref-link ref-link-side" (click)="forgotPass()">Forgot password?</a>
+                    <a href="javascript:void(0)" class="ref-link ref-link-side" (click)="forgotPass(true)">Forgot password?</a>
                 </section>
                 <section class="section-controls">
                     <button type="button" class=" button secondary-button ">Register</button>
@@ -26,17 +26,21 @@
                 </section>
             </form>
             <form action="" *ngIf="isForgot == true">
-                <section class="">
+                <section  class="section-input">
                     <app-input-box 
                     name="Enter Email" 
                     placeholder = "Enter your username"
-                    widthPx = "250px"
+                    widthPx = "400px"
                     />
                     <app-input-box 
                     name="Username" 
                     placeholder = "Enter your username"
-                    widthPx = "250px"
+                    widthPx = "400px"
                     />
+                </section>
+                <section class="section-controls">
+                    <button type="button" class=" button secondary-button " (click)="forgotPass(false)">Back</button>
+                    <button type="submit" class="button primary-button ">Confirm</button>
                 </section>
             </form>
         </div>
