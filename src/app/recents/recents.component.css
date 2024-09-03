@@ -1,0 +1,8 @@
+.recents-container{
+    background-color: var(--semiblack);
+    width:auto;
+    height: 80px;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    border-radius: 5px;
+}

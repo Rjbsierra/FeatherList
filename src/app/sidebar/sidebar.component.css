@@ -1,11 +1,15 @@
 .sidebar-container{
-    width: 50vw;
+    position: relative;
+    width: 200px;
+    height:100vh;
     background-color: var( --semiblack);
     color: var(--offwhite);
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     font-family: 'roboto';
+    overflow: hidden;
+    z-index: 2;
 }
 
 

@@ -10,6 +10,11 @@ import { InputBoxComponent } from './input-box/input-box.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { TodoItemComponent } from './todo-item/todo-item.component';
 import { SidebarListComponent } from './sidebar-list/sidebar-list.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { HeaderComponent } from './header/header.component';
+import { RecentsComponent } from './recents/recents.component';
+import { ListComponent } from './list/list.component';
+import { ListItemComponent } from './list-item/list-item.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +24,13 @@ import { SidebarListComponent } from './sidebar-list/sidebar-list.component';
     InputBoxComponent,
     SidebarComponent,
     TodoItemComponent,
-    SidebarListComponent
+    SidebarListComponent,
+    HomePageComponent,
+    HeaderComponent,
+    RecentsComponent,
+    ListComponent,
+    ListItemComponent,
+    
   ],
   imports: [
     BrowserModule,

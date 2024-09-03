@@ -4,6 +4,7 @@
     --offwhite : #F8F8F8;
     --purple : #4E5166;
     --purple-highlight : #a39daa;
+    --list-background : rgba(217, 217, 217, 0.5);
 }
 body{
     background-color: var(--offwhite);
