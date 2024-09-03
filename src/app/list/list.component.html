@@ -1,0 +1,57 @@
+<!--
+ This is the opened to-do list item
+
+ *ngIf="isOpened" add this when your done designing
+ 
+ -->
+<div class="todo-container-opened">
+    <div class="todo-container open" >
+        <div class="todo-content">
+            <div class="todo-title open" >
+                <h4 class="todo-title-content" >Title</h4>
+                <p>Time left</p>
+            </div>
+            <div class="todo-button-container">
+                <i class="bi bi-x todo-button" (click)="openList(false)"></i>
+            </div>
+        </div>
+        <section class="todo-section">
+            <div class="todo-add-container">
+                <i class="bi bi-plus todo-add"></i>
+                
+            </div>
+        </section>
+       
+        <section class="todo-hr"></section>
+        <app-list-item />
+        <section class="todo-hr"></section>
+        <app-list-item />
+        <section class="todo-hr"></section>
+    </div>
+    <div class="todo-comments">
+
+    </div>
+</div>
+
+
+<!--
+ This is the unopened to-do list item
+ -->
+<div class="todo-container" >
+    <div class="todo-content">
+        <div class="todo-title" (click)="openList(true)">
+            <h4 class="todo-title-content" >Title</h4>
+            <p>Time left</p>
+        </div>
+        <div class="todo-grabbable">
+
+        </div>
+        <div class="todo-button-container">
+            <i class="bi bi-x todo-button"></i>
+        </div>
+    </div>
+    <div class="todo-click" (click)="openList(true)">
+
+    </div>
+</div>
+

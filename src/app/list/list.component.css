@@ -1,0 +1,192 @@
+.todo-container{
+    width: 300px;
+    height: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+    margin: 1em;
+}
+
+.todo-container::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--purple);
+    height: 50%;
+    aspect-ratio: 1/1;
+    z-index: -2;
+}
+
+.todo-container::after{
+    content: '';
+    position: absolute;
+    background-color: var(--offwhite);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    border-radius: 5px 30px 5px 5px;
+    z-index: -1;
+}
+
+.todo-content{
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background-color: var(--offyellow);
+    border-radius: 5px 30px 0px 0px;
+    justify-content:space-between;
+    text-align: center;
+    align-items: center;
+    position: relative;
+}
+
+.todo-content >*{
+    margin: .7em;
+   color: var(--offwhite);
+}
+
+.todo-button-container{
+    background-color: var(--purple);
+    width: 35px;
+    aspect-ratio: 1/1;
+    border-radius: 100em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    align-self: self-start;
+}
+
+.todo-button {
+    font-size: 2em;
+    vertical-align: 0;
+    line-height: 0;
+    cursor: pointer;
+    position: relative;
+}
+
+
+.todo-button::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--purple);
+    transform: translateY(0);
+    transition: transform 0.2s ease-in-out;
+}
+
+.todo-button:hover::after{
+    transform: translateY(-100%);
+
+
+}
+
+.todo-grabbable{
+    cursor: grab;
+    flex: 1;
+    margin: 0 !important;
+    align-self: stretch;
+}
+.todo-title >*{
+    margin: 0;
+}
+.todo-title:hover{
+    cursor: pointer;
+}
+
+.todo-click{
+    align-self: stretch;
+    flex: 1;
+    cursor: pointer;
+}
+
+.todo-container-opened{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--list-background);
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo-container.open{
+    width: 50%;
+    height: 80%;
+    
+}
+.todo-comments{
+    width: 20%;
+    height: 80%;
+    margin-left: 1em;
+    background-color: var(--offwhite);
+    border-radius: 5px;
+}
+
+.todo-title.open{
+    cursor: default;
+}
+
+.todo-add{
+    font-size: 2em;
+    vertical-align: 0;
+    line-height: 0;
+    color: var(--offwhite);
+    transition: .2s;
+}
+
+.todo-add-container{
+    width: fit-content;
+    aspect-ratio: 1/1;
+    background-color: var(--list-background);
+    border-radius: 100em;
+    padding: .5em;
+    margin: .5em;
+    align-self: center;
+    cursor: pointer;
+    transition: .2s;
+    overflow: hidden;
+
+    border: solid 0px 2px 0px 0px var(--list-background);
+}
+
+.todo-add-container:hover{
+    background-color: var(--purple);
+
+}
+
+.todo-hr{
+    align-self: center;
+    width: 98%;
+    height: 1px;
+    background-color: var(--offwhite);
+    box-shadow: 0px 0px 1px 1px var(--list-background);
+}
+
+.todo-section{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.todo-section:hover .todo-add-container{
+    background-color: var(--purple);
+
+}

@@ -1,0 +1,62 @@
+.list-conatainer{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 1em;
+
+}
+
+.list-content{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    height: fit-content;
+}
+
+.list-content >*{
+    height: fit-content;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-self: flex-start;
+    justify-content: center;
+}
+.list-content >* p{
+    margin: 0;
+}
+.list-box div{
+    width: 20px;
+    aspect-ratio: 1/1;
+    background-color: var(--list-background);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.list-box div:hover{
+    background-color: var(--purple);
+
+}
+.list-box {
+    flex: 1;
+
+}
+.list-desc{
+flex: 9;
+text-align: justify !important;
+text-justify: inter-word;
+}
+
+.list-time{
+flex: 2;
+}
+.list-member{
+flex: 2;
+}
+.list-status{
+flex: 2;
+}
+
+.list-title >*{
+    letter-spacing: .05em;
+}
