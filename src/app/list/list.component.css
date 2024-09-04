@@ -129,13 +129,6 @@
     height: 80%;
     
 }
-.todo-comments{
-    width: 20%;
-    height: 80%;
-    margin-left: 1em;
-    background-color: var(--offwhite);
-    border-radius: 5px;
-}
 
 .todo-title.open{
     cursor: default;

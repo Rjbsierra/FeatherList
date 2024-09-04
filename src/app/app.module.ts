@@ -15,6 +15,7 @@ import { HeaderComponent } from './header/header.component';
 import { RecentsComponent } from './recents/recents.component';
 import { ListComponent } from './list/list.component';
 import { ListItemComponent } from './list-item/list-item.component';
+import { ListCommentsComponent } from './list-comments/list-comments.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { ListItemComponent } from './list-item/list-item.component';
     RecentsComponent,
     ListComponent,
     ListItemComponent,
+    ListCommentsComponent,
     
   ],
   imports: [
