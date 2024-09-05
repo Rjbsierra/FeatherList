@@ -13,6 +13,10 @@ app.get('/book',(req,res)=>{
     console.log('thebook')
 })
 
+app.use('./server/routes',(req,res) =>{
+    
+})
+
 
 app.listen(process.env.PORT, ()=>{
     console.log(`server listenisng to ${process.env.PORT}`)
