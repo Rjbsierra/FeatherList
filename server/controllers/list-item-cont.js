@@ -1,12 +1,24 @@
-const listItem = require('../model/list-item')
+const List = require('../model/list')
 
-const addItem = async => (req,res) =>{
+const addListItem = async (req,res) =>{
     try{
-        listItem.create(req.body);
+        const list = await List.findByIdAndUpdate({_id:req.params.id}, {$push:{list_items : req.body}}, {new:true,runValidators:true})
+        res.status(201).json({list})
     }catch(err){
-        console.error(err)
-        res.status(500).json({error: 'Server error', msg: err})
+        res.status(500).json({msg: err});
+        console.log('error encoutnered: ' +  `List with ID ${listId} not found`)
     }
 }
 
-module.exports = {addItem}
+const getListItems = async (req,res)=>{
+    const {id : listId} = req.params;
+    await List.findById({_id : listId}, 'list_items').then((list) =>{
+        res.status(200).json({list})
+        console.log(`List obtained: ${list}`)
+    }).catch((err)=>{
+        res.status(500).json({msg : err});
+        console.log('Error encountered: ' + `List with ID ${listId} not found`)
+    })
+}
+
+module.exports = {addListItem, getListItems}

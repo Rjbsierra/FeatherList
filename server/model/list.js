@@ -9,9 +9,9 @@ const listSchema = new Schema({
         comments: [{
             user_id:{type: mongoose.Schema.Types.ObjectId, ref: 'user'},
             comment: {type: String},
-            time:{type: Date}
+            time:{type: Date, default: Date.now()}
         }],
-        list_item:[{
+        list_items:[{
             title: {
                 type: String,
                 maxlength: [20, "can only be below 20 characters"]
@@ -27,7 +27,7 @@ const listSchema = new Schema({
                 type: String
             },
             status:{
-                type: String,   
+                type: String, default: "standard",   
             },
             created:{
                 type: Date, default: Date.now()

@@ -1,9 +1,14 @@
 const List = require('../model/list')
 
 
-const getList = (req,res) =>{
-    list.find()
-    .then(console.log('list found'))
+const getList = async (req,res) =>{
+    await List.find({user_id : req.params.id}).then((list) =>{
+        res.status(200).json({list})
+        console.log(`list found: ${list}`)
+    }).catch((err)=>{
+        res.status(500).json({err})
+        console.log('error encoutnered: ' + err)
+    })
 }
 
 const addList = async (req, res) =>{
@@ -16,28 +21,7 @@ const addList = async (req, res) =>{
     }
 }
 
-const addComment = async (req,res) =>{
-    try{
-        const {id: listId} = req.params;
-        
-        const list = await List.findByIdAndUpdate({_id:listId}, {$push:{comments: req.body}},{new:true,runValidators:true})
-        res.status(201).json({list})
-    }catch(err){
-        res.status(500).json({msg: err})
-        console.log('error encoutnered: ' +  `List with ID ${listId} not found`)
-    }
-}
 
-const addListItem = async (req,res) =>{
-    try{
-        const {id:listId} = req.params;
 
-        const list = await List.findByIdAndUpdate({_id:listId}, {$push:{list_item : req.body}}, {new:true,runValidators:true})
-        res.status(201).json({list})
-    }catch(err){
-        res.status(500).json({msg: err});
-        console.log('error encoutnered: ' +  `List with ID ${listId} not found`)
-    }
-}
 
-module.exports = {getList, addList, addComment, addListItem}
+module.exports = {getList, addList}

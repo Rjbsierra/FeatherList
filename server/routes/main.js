@@ -6,8 +6,8 @@ const commentRoutes = require('./comment-routes')
 const getRoutes = function(app){
     app.use('/api/list',listRoutes);
     app.use('/api/user',userRoutes);
-    app.use('/api/list_item', listItemRoutes);
-    app.use('/api/comment', commentRoutes);
+    app.use('/api/list/item', listItemRoutes);
+    app.use('/api/list/comment', commentRoutes);
 }
 
 module.exports = {getRoutes};
