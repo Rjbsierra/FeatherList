@@ -16,6 +16,8 @@ import { RecentsComponent } from './recents/recents.component';
 import { ListComponent } from './list/list.component';
 import { ListItemComponent } from './list-item/list-item.component';
 import { ListCommentsComponent } from './list-comments/list-comments.component';
+import { FormsModule } from '@angular/forms';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 @NgModule({
   declarations: [
@@ -32,11 +34,13 @@ import { ListCommentsComponent } from './list-comments/list-comments.component';
     ListComponent,
     ListItemComponent,
     ListCommentsComponent,
+    ErrorPageComponent,
     
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     provideClientHydration(),

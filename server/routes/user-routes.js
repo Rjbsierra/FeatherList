@@ -6,5 +6,7 @@ router.route('/').post(user.addUser)
 
 router.route('/:id').get(user.getAccount)
 
+router.route('/username/:username/password/:pass').get(user.validateUser)
+
 
 module.exports = router;

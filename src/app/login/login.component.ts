@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserService } from '../api/user.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -8,12 +10,22 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
 
-  constructor( private route : Router){}
+    username: String = '';
+    password: String = '';
+    user: any = {};
+  constructor( private route : Router, private service : UserService){
+
+  }
+
 
   isForgot : boolean = false;
 
   forgotPass(isForgot : boolean){
     this.isForgot = isForgot;
+  }
+
+  onSubmitLogin(){
+    this.service.reqUser(this.username,this.password)
   }
 
 }

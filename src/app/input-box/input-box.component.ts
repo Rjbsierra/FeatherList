@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnInit, ViewChild, viewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output, output, ViewChild, viewChild } from '@angular/core';
 
 @Component({
   selector: 'app-input-box',
@@ -7,6 +7,9 @@ import { Component, ElementRef, Input, OnInit, ViewChild, viewChild } from '@ang
 })
 
 export class InputBoxComponent implements OnInit{
+
+  inputValue: String = '';
+
   @ViewChild('inputBox') inputBox?: ElementRef<HTMLInputElement>;
   @ViewChild('inputContainer') inputContainer!: ElementRef<HTMLDivElement>;
   @ViewChild('inputName') inputName?: ElementRef<HTMLLabelElement>;
@@ -18,9 +21,12 @@ export class InputBoxComponent implements OnInit{
   @Input() placeholder: String = 'placeholder';
   @Input() type: String = 'text';
 
+  @Output() valueChanged: EventEmitter<any> = new EventEmitter<any>();
+
+
+
   focusInput = () =>{
     this.inputBox?.nativeElement.focus();
-    console.log("focusing")
   }
   onFocus(isFocused: boolean) {
     if (isFocused) {
@@ -30,6 +36,10 @@ export class InputBoxComponent implements OnInit{
       this.inputContainer.nativeElement.classList.remove('focused');
 
     }
+  }
+
+  onChange(){
+    this.valueChanged.emit(this.inputValue);
   }
   ngOnInit(): void {
       

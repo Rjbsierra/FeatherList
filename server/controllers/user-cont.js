@@ -1,4 +1,5 @@
 const User = require('../model/user')
+const UserService = require('../middleware/users')
 
 const addUser = async (req,res)=>{
     await User.create(req.body).then((user) =>{
@@ -19,7 +20,16 @@ const getAccount = async (req,res) =>{
             })
 }
 
+const validateUser = async (req,res) =>{
+    // await UserService.validate(req.params).then((result)=>{
+        
+    // })
+    await User.findOne({username: req.params.username, password: req.params.pass}).then((user) =>{
+        res.status(200).json({user})
+    }).catch((err) =>{
+        res.status(500).json({err})
+    })
+}
 
 
-
-module.exports = {addUser, getAccount}
+module.exports = {addUser, getAccount, validateUser}

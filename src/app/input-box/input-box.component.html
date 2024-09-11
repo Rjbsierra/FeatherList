@@ -1,4 +1,4 @@
 <div class="input-container" (onmousedown)="onFocus(true)" (onmouseup)="onFocus(false)" (click)="focusInput()" (focusin)="onFocus(true)" (focusout)="onFocus(false)"  #inputContainer>
     <label class="input-name" for={{name}}  #inputName>{{name}}</label>
-    <input class="input-box" type={{type}} placeholder={{placeholder}} [style.width]="widthPx" #inputBox/>
+    <input class="input-box" [(ngModel)]="inputValue" name="inputValue" (input)="onChange()" type={{type}} placeholder={{placeholder}} [style.width]="widthPx" #inputBox/>
 </div>

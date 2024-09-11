@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-list',
@@ -6,6 +6,10 @@ import { Component } from '@angular/core';
   styleUrl: './list.component.css'
 })
 export class ListComponent {
+
+  // YOU STOPPED HERE!!!!
+  // you were gonna make binded values from the oninit list
+ @Input() title: string = '';
 
   isOpened : boolean = false;
 
