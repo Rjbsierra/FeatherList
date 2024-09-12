@@ -2,17 +2,17 @@
     <section class="list-comment-head">
         <h3>Comments</h3>
     </section>
-    <section class="list-comment-body">
+    <section class="list-comment-body" *ngFor="let item of commentData.list[0].comments, let i = index">
         <div class="list-comment-user">
             <img src="" alt="user">
         </div>
         <div class="list-comment-content">
           <div class="list-content-head">
-            <h4>User</h4>
-            <p>time</p>
+            <h4>{{item.user_id}}</h4>
+            <p>{{item.time}}</p>
           </div>
           <div class="list-content-body">
-            <p>comment comment comment comment comment comment</p>
+            <p>{{item.comment}}</p>
           </div>
         </div>
     </section>

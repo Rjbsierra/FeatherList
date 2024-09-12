@@ -4,12 +4,12 @@
  *ngIf="isOpened" add this when your done designing
  
  -->
-<div class="todo-container-opened">
+<div class="todo-container-opened" *ngIf="isOpened">
     <div class="todo-container open" >
         <div class="todo-content">
             <div class="todo-title open" >
-                <h4 class="todo-title-content" >Title</h4>
-                <p>Time left</p>
+                <h4 class="todo-title-content" >{{title}}</h4>
+                <p>{{time}}</p>
             </div>
             <div class="todo-button-container">
                 <i class="bi bi-x todo-button" (click)="openList(false)"></i>
@@ -21,14 +21,19 @@
                 
             </div>
         </section>
-       
         <section class="todo-hr"></section>
-        <app-list-item />
-        <section class="todo-hr"></section>
-        <app-list-item />
-        <section class="todo-hr"></section>
+        <section *ngFor="let data of listData.list[0].list_items, let i = index">
+            <app-list-item 
+                [data]="data"
+                [index]="i"
+            />
+            <section class="todo-hr"></section>
+        </section>
+
     </div>
-    <app-list-comments />
+    <app-list-comments 
+        [data]="commentData"
+    />
 </div>
 
 
@@ -38,8 +43,8 @@
 <div class="todo-container" >
     <div class="todo-content">
         <div class="todo-title" (click)="openList(true)">
-            <h4 class="todo-title-content" >Title</h4>
-            <p>Time left</p>
+            <h4 class="todo-title-content" >{{title}}</h4>
+            <p>{{time}}</p>
         </div>
         <div class="todo-grabbable">
 

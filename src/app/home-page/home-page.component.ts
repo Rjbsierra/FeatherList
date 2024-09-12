@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ListService } from '../api/list.service';
-import { ListInfo } from '../interface/list-info';
+import { ListData, ListInfo } from '../interface/list-info';
 import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
@@ -10,7 +10,8 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class HomePageComponent implements OnInit{
 
-  lists : Array<ListInfo> = [];
+  lists : ListInfo = new ListData();
+
 
   constructor(private listService : ListService){
     
@@ -20,7 +21,7 @@ export class HomePageComponent implements OnInit{
   ngOnInit(): void {
     this.listService.getLists().subscribe({
       next: (data:ListInfo)=>{
-        this.lists.push(data);
+        this.lists = data;
       },
       error:(err:HttpErrorResponse)=>{
         console.log(err);

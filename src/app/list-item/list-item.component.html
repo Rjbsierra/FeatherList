@@ -1,6 +1,6 @@
 <div class="list-conatainer">
     <div class="list-title">
-        <h4>List Title</h4>
+        <h4>{{title}}</h4>
     </div>
     <div class="list-content">
         <!-- use click class for interaction -->
@@ -8,16 +8,16 @@
             <div></div>
         </section>
         <section class="list-desc">
-            <p>list description list description list description list description list description list description list description list description list description list description list description list description list description list description</p>
+            <p>{{content}}</p>
         </section>
-        <section class="list-time">
-            <p>time left</p>
+        <section class="list-time" *ngIf="isTimed">
+            <p>{{time}}</p>
         </section>
-        <section class="list-member">
+        <section class="list-member" *ngIf="isAssign">
             <img src="" alt="asdasd">
         </section>
         <section class="list-status">
-            <p>status</p>
+            <p>{{status}}</p>
         </section>
     </div>
 </div>

@@ -17,14 +17,17 @@ export class ListService  {
   getLists(): Observable<ListInfo>{
     return this.http.get<ListInfo>(`http://localhost:4000/api/list/${this.localStorage.getItem('UID')}`)
   }
-  getListData() {
-    this.http.get<ListInfo>(`http://localhost:4000/api/list/${this.localStorage.getItem('UID')}`).subscribe({
-      next: (data)=>{
-          return data.list;
-      },
-      error:(err)=>{
-        console.log(err);
-      }
-    })
-}
+
+
+
+//   getListData() {
+//     this.http.get<ListInfo>(`http://localhost:4000/api/list/${this.localStorage.getItem('UID')}`).subscribe({
+//       next: (data)=>{
+//           return data.list;
+//       },
+//       error:(err)=>{
+//         console.log(err);
+//       }
+//     })
+// }
 }

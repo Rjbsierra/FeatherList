@@ -20,3 +20,24 @@ export interface ListInfo {
         }[];
     }[];
 }
+
+export class ListData implements ListInfo {
+        list = [{
+            _id: '',
+            user_id: '',
+            title: '',
+            type: '',
+            comments: [{
+                time: '',
+                user_id: '',
+                comment: '',
+            }],
+            list_items: [{
+                title: '',
+                content: '',
+                status: '',
+                creator_id: '',
+            }]
+        }]
+    }
+   

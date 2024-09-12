@@ -129,7 +129,9 @@
     height: 80%;
     
 }
-
+.todo-title{
+    text-align: start;
+}
 .todo-title.open{
     cursor: default;
 }
