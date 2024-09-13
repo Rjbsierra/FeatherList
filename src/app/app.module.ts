@@ -18,6 +18,7 @@ import { ListItemComponent } from './list-item/list-item.component';
 import { ListCommentsComponent } from './list-comments/list-comments.component';
 import { FormsModule } from '@angular/forms';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import { RegisterPageComponent } from './register-page/register-page.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { ErrorPageComponent } from './error-page/error-page.component';
     ListItemComponent,
     ListCommentsComponent,
     ErrorPageComponent,
+    RegisterPageComponent,
     
   ],
   imports: [

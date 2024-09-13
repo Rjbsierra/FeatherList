@@ -4,6 +4,7 @@ import { BookComponent } from './book/book.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { LoginComponent } from './login/login.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import { RegisterPageComponent } from './register-page/register-page.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: '**',
     component: ErrorPageComponent
+  },
+  {
+    path: 'register',
+    component: RegisterPageComponent
   },
 ];
 

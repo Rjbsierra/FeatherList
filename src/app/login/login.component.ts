@@ -28,4 +28,7 @@ export class LoginComponent {
     this.service.reqUser(this.username,this.password)
   }
 
+  onRegister(){
+    this.route.navigate(['register']);
+  }
 }

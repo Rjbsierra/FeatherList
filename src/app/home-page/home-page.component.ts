@@ -11,14 +11,19 @@ import { HttpErrorResponse } from '@angular/common/http';
 export class HomePageComponent implements OnInit{
 
   lists : ListInfo = new ListData();
+  links : Array<any> = [];
 
 
   constructor(private listService : ListService){
-    
-    
+
+
 
   }
   ngOnInit(): void {
+    this.links = [{
+      name: ['Personlas', 'Groups'],
+      links: ['home', 'scheduled', 'completed']
+    }]
     this.listService.getLists().subscribe({
       next: (data:ListInfo)=>{
         this.lists = data;

@@ -5,10 +5,10 @@
         <h2>FeatherList</h2>
     </section>
     <section class="sidebar-body">
-        <app-sidebar-list 
-            [name] = "section.name"
-            [links] = "section.links"
+        <app-sidebar-list *ngFor="let sections of section[0].name"
+            [name]="sections"
+            [links]="section[0].links"
         />
-        <app-sidebar-list/>
+ 
     </section>
 </div>

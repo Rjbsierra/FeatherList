@@ -1,5 +1,7 @@
 <div class="home-container">
-    <app-sidebar/>
+    <app-sidebar
+    [section]="links"
+    />
 
     <div class="home-mainbody">
         <div class="home-header-container">
@@ -11,10 +13,12 @@
             <div class="home-content">
          
                 <div class="content-new">
-                    <app-list *ngFor="let data of lists.list, let i = index" 
+                    <div class="content-new-container">
+                        <app-list *ngFor="let data of lists.list, let i = index" 
                         [data]="data"
                         [index]="i"
                     />
+                    </div>
                 </div>
                 <div class="content-scheduled"> 
                   

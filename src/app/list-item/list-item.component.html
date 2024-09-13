@@ -10,11 +10,17 @@
         <section class="list-desc">
             <p>{{content}}</p>
         </section>
-        <section class="list-time" *ngIf="isTimed">
+        <section class="list-time" *ngIf="isTimed; notTimed">
             <p>{{time}}</p>
         </section>
-        <section class="list-member" *ngIf="isAssign">
+        <section class="list-member" *ngIf="isAssign; notAssign">
             <img src="" alt="asdasd">
+        </section>
+        <section class="list-time" #notTimed>
+            <p></p>
+        </section>
+        <section class="list-member" #notAssign>
+        
         </section>
         <section class="list-status">
             <p>{{status}}</p>

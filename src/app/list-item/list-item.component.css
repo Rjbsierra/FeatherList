@@ -48,8 +48,11 @@
 .list-desc{
 flex: 9;
 text-align: justify !important;
-text-justify: inter-word;
+text-justify:inter-word;
+justify-content: start !important;
 }
+
+
 
 .list-time{
 flex: 2;
