@@ -15,7 +15,7 @@ export class ListService  {
   }
 
   getLists(): Observable<ListInfo>{
-    return this.http.get<ListInfo>(`http://localhost:4000/api/list/${this.localStorage.getItem('UID')}`)
+    return this.http.get<ListInfo>(`http://localhost:4000/api/v1/list/${this.localStorage.getItem('UID')}`)
   }
 
 

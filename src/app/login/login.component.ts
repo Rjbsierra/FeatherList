@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../api/user.service';
 import { HttpErrorResponse } from '@angular/common/http';
+import { AuthService } from '../api/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ export class LoginComponent {
     username: String = '';
     password: String = '';
     user: any = {};
-  constructor( private route : Router, private service : UserService){
+  constructor( private route : Router, private service : AuthService){
 
   }
 
@@ -25,7 +26,7 @@ export class LoginComponent {
   }
 
   onSubmitLogin(){
-    this.service.reqUser(this.username,this.password)
+    this.service.loginUser(this.username,this.password)
   }
 
   onRegister(){

@@ -4,7 +4,7 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BookComponent } from './book/book.component';
-import { HttpClient, provideHttpClient } from '@angular/common/http';
+import { HttpClient, provideHttpClient, withInterceptors } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { InputBoxComponent } from './input-box/input-box.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
@@ -19,6 +19,7 @@ import { ListCommentsComponent } from './list-comments/list-comments.component';
 import { FormsModule } from '@angular/forms';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { RegisterPageComponent } from './register-page/register-page.component';
+import { authInterceptor } from './interceptor/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,7 @@ import { RegisterPageComponent } from './register-page/register-page.component';
   ],
   providers: [
     provideClientHydration(),
-    provideHttpClient(),
+    provideHttpClient(withInterceptors([authInterceptor])),
     HttpClient
   ],
   bootstrap: [AppComponent]

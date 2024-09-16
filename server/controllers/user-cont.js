@@ -1,5 +1,8 @@
 const User = require('../model/user')
 const UserService = require('../middleware/users')
+const AuthService = require('../middleware/auth')
+const jwt = require('jsonwebtoken');
+
 
 const addUser = async (req,res)=>{
     await User.create(req.body).then((user) =>{
@@ -21,11 +24,9 @@ const getAccount = async (req,res) =>{
 }
 
 const validateUser = async (req,res) =>{
-    // await UserService.validate(req.params).then((result)=>{
-        
-    // })
-    await User.findOne({username: req.params.username, password: req.params.pass}).then((user) =>{
-        res.status(200).json({user})
+    await User.findOne({username: req.body.username, password: req.body.password}).then((user) =>{
+        const token = jwt.sign({username: user.username, role: user.role, id: user.id}, process.env.JWT_SECRET, {expiresIn: '30d'})
+        res.status(200).json({mgs: 'user logged in!',token})
     }).catch((err) =>{
         res.status(500).json({err})
     })
