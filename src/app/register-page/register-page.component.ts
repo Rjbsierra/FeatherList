@@ -10,14 +10,24 @@ export class RegisterPageComponent {
 
   username: string = ''
   password: string = ''
-  img : string = ''
+  img : File | null = null
+  data : any = {};
 
   constructor( private userService: UserService){
 
   }
 
+  onFileSelected(event: any): void {
+    const file = event.target.files[0]; // Select the first file
+    if (file) {
+      this.img = file;
+    }
+  }
+
   addUser(){
-    console.log(this.img)
+    this.data = {username :this.username, pass : this.password, img : this.img}
+
+    this.userService.registerUser(this.data)
     
   }
 }

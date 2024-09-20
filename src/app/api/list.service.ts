@@ -11,14 +11,14 @@ export class ListService  {
 
   constructor(private http:HttpClient, private localStorage: LocalStorageService) { 
 
-    
   }
+ 
 
   getLists(): Observable<ListInfo>{
-    return this.http.get<ListInfo>(`http://localhost:4000/api/v1/list/${this.localStorage.getItem('UID')}`)
+    return this.http.get<ListInfo>(`http://localhost:4000/api/v1/list/`)
   }
 
-
+ 
 
 //   getListData() {
 //     this.http.get<ListInfo>(`http://localhost:4000/api/list/${this.localStorage.getItem('UID')}`).subscribe({

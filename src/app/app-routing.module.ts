@@ -25,13 +25,14 @@ const routes: Routes = [
     component: LoginComponent
   },
   {
-    path: '**',
-    component: ErrorPageComponent
-  },
-  {
     path: 'register',
     component: RegisterPageComponent
   },
+  {
+    path: '**',
+    component: ErrorPageComponent
+  },
+  
 ];
 
 @NgModule({

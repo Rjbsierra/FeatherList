@@ -14,6 +14,8 @@ export class AuthService {
     this.http.post<any>(`http://localhost:4000/api/v1/user/login`, {username : username, password : password}).subscribe({
       next: (data) =>{
         console.log(data)
+        
+        //this takes the jwt token
         this.localstorage.setItem('token', data.token)
         this.route.navigateByUrl('/home')
 

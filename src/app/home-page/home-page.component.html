@@ -16,9 +16,11 @@
                     <div class="content-new-container">
                         <app-list *ngFor="let data of lists.list, let i = index" 
                         [data]="data"
-                        [index]="i"
+                        [index]="i" 
                     />
                     </div>
+                    <img class="just-image" #justImage>
+
                 </div>
                 <div class="content-scheduled"> 
                   

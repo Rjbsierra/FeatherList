@@ -6,8 +6,8 @@ const listItem = require('../controllers/list-item-cont')
 const auth = require('../middleware/auth')
 
 
-router.route('/').post(auth.verifyToken, list.addList);
+router.route('/addlist').post(auth.verifyToken, list.addList);
 
-router.route('/:id').get(auth.verifyToken, list.getList)
+router.route('/').get(auth.verifyToken, list.getList)
 
 module.exports = router;

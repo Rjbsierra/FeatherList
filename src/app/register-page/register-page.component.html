@@ -1,6 +1,6 @@
 <div>
-    <form action="" (ngSubmit)="addUser()" >
-        <input type="file" [(ngModel)]="img" name="img">
+    <form (ngSubmit)="addUser()" enctype="multipart/form-data">
+        <input type="file"  name="img" (change)="onFileSelected($event)">
         <input type="text" [(ngModel)]="username" name="username">
         <input type="text" [(ngModel)]="password" name="password">
         <button type="submit">click here</button>

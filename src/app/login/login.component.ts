@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../api/user.service';
 import { HttpErrorResponse } from '@angular/common/http';
@@ -11,12 +11,15 @@ import { AuthService } from '../api/auth.service';
 })
 export class LoginComponent {
 
+
     username: String = '';
     password: String = '';
     user: any = {};
   constructor( private route : Router, private service : AuthService){
 
   }
+
+
 
 
   isForgot : boolean = false;
@@ -30,6 +33,7 @@ export class LoginComponent {
   }
 
   onRegister(){
-    this.route.navigate(['register']);
+    this.route.navigate(['/register']);
+
   }
 }
