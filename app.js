@@ -3,7 +3,7 @@ const app = express()
 require('dotenv').config()
 const cors = require('cors')
 const {connectDB} = require('./server/db')
-
+const path = require('path')
 
 
 
@@ -14,6 +14,7 @@ app.use(cors({
     origin: 'http://localhost:4200',
     allowedHeaders: ['Authorization', 'Content-Type']
 }))
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')))
 
 //ROUTES
 const {getRoutes} =  require('./server/routes/main')

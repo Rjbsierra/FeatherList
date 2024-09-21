@@ -1,6 +1,6 @@
 export interface UserInfo {
     user:{
-        _id: string;
+        id: string;
         username: string;
         role: string;
         img: string;

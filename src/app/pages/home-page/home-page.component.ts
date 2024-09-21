@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { ListService } from '../api/list.service';
-import { ListData, ListInfo } from '../interface/list-info';
+import { ListService } from '../../api/list.service';
+import { ListData, ListInfo } from '../../interface/list-info';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 @Component({

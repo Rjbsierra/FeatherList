@@ -1,0 +1,16 @@
+.recents-container{
+    width:auto;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    border-radius: 5px;
+}
+.recents-container h2{
+    font-weight: bold;
+    letter-spacing: .05em;
+}
+.recents-body{
+    background-color: var(--semiblack);
+    width:auto;
+    height: 80px;
+    border-radius: 5px;
+}

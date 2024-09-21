@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ListData, ListInfo } from '../interface/list-info';
+import { ListInfo, ListData } from '../../interface/list-info';
+
 
 @Component({
   selector: 'app-list-comments',

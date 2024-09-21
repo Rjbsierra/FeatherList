@@ -5,3 +5,10 @@
     box-shadow: 0px 0px 5px 1px rgb(155, 155, 155);
     
 }
+
+.header-image{
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 100px;
+}

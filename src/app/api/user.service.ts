@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { LocalStorageService } from './local-storage.service';
 import { Router } from '@angular/router';
 import { UserInfo } from '../interface/user-info';
+import { Observable } from 'rxjs';
 
 
 @Injectable({
@@ -13,8 +14,7 @@ export class UserService {
   constructor(private http: HttpClient, private localStorage: LocalStorageService, private route: Router) { 
    
   }
-    
-
+  
     registerUser = async (user : any) =>{
       const formData = new FormData();
 
@@ -26,5 +26,9 @@ export class UserService {
       })
     }
     
+    getUser() : Observable<UserInfo> {
+      return this.http.get<UserInfo>(`http://localhost:4000/api/v1/user/myAccount/`)
+
+    }
 
  }

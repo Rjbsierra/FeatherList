@@ -2,7 +2,6 @@ const jwt = require('jsonwebtoken');
 
 
 const verifyToken = async (req, res, next) =>{
-    
     const authHeader = req.headers.authorization 
     if(!authHeader || !authHeader.startsWith('Bearer ')){
         throw new 'no token boi'
