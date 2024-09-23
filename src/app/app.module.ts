@@ -19,6 +19,9 @@ import { FormsModule } from '@angular/forms';
 import { ErrorPageComponent } from './pages/error-page/error-page.component';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
 import { authInterceptor } from './interceptor/auth.interceptor';
+import { HomeComponent } from './pages/personal/home/home.component';
+import { ScheduledComponent } from './pages/personal/scheduled/scheduled.component';
+import { CompletedComponent } from './pages/personal/completed/completed.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +39,9 @@ import { authInterceptor } from './interceptor/auth.interceptor';
     ListCommentsComponent,
     ErrorPageComponent,
     RegisterPageComponent,
+    HomeComponent,
+    ScheduledComponent,
+    CompletedComponent,
     
   ],
   imports: [

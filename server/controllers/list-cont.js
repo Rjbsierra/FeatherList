@@ -11,13 +11,12 @@ const getList = async (req,res) =>{
 }
 
 const addList = async (req, res) =>{
-    try{
-        const list = await List.create(req.body);
-        res.status(201).json({list})
-    }catch(err){
+        await List.create(req.body).then((list) =>{
+            res.status(201).json({list})
+        }).catch((err) =>{
         res.status(500).json({msg: err})
         console.log('error encoutnered: ' + err)
-    }
+    })
 }
 
 

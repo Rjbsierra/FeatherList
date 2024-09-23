@@ -11,7 +11,6 @@ const path = require('path');
 const addUser = async (req,res)=>{
     req.body.img = req.file.originalname
 
-
     const filename = req.file.originalname;
     const filePath = path.join('./uploads', filename);
 
@@ -21,17 +20,14 @@ const addUser = async (req,res)=>{
     .png({quality: 30})
     .toFile(filePath);
 
-
-    console.log(req.file);
-    const theUser = req.file
-    console.log("HEYYY");
+ 
     res.status(201).json({mgs: req.file.buffer})
-    // await User.create(req.body).then((user) =>{
-    //      res.status(201).json({user})
-    // }).catch((err)=>{
-    //     console.log(`error encountered: ${err}`)
-    //     res.status(500).json({msg: `Error creating user: ${err}`})
-    // })
+    await User.create(req.body).then((user) =>{
+         res.status(201).json({user})
+    }).catch((err)=>{
+        console.log(`error encountered: ${err}`)
+        res.status(500).json({msg: `Error creating user: ${err}`})
+    })
 }
 
 

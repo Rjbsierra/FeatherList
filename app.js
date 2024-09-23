@@ -1,10 +1,11 @@
 const express = require('express')
 const app = express()
 require('dotenv').config()
+require('express-async-errors')
 const cors = require('cors')
 const {connectDB} = require('./server/db')
 const path = require('path')
-
+const errorHandler = require('./server/middleware/error-handler')
 
 
 // APP CONFIG
@@ -16,10 +17,13 @@ app.use(cors({
 }))
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')))
 
+
 //ROUTES
 const {getRoutes} =  require('./server/routes/main')
 getRoutes(app);
 
+
+app.use(errorHandler)
 
 // STARTUP
 const start = async () =>{
