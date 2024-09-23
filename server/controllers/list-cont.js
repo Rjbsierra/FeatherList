@@ -2,6 +2,7 @@ const List = require('../model/list')
 
 
 const getList = async (req,res) =>{
+
     await List.find({user_id : req.user.id}).then((list) =>{
         res.status(200).json({list})
     }).catch((err)=>{
@@ -11,6 +12,9 @@ const getList = async (req,res) =>{
 }
 
 const addList = async (req, res) =>{
+
+        req.body.user_id = req.user.id
+
         await List.create(req.body).then((list) =>{
             res.status(201).json({list})
         }).catch((err) =>{

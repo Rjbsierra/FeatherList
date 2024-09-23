@@ -5,7 +5,7 @@ const listSchema = new Schema({
         user_id:{type: mongoose.Schema.Types.ObjectId, ref: 'user'},
         created: {type: Date, default : Date.now()},
         title: {type: String, required: [true, "title is mandatory"]},
-        type: {type: String, default: 'standard', enum: {values: ['Standard', 'Group'], message : '{VALUE} is not supported'}},
+        type: {type: String, default: 'Standard', enum: {values: ['Standard', 'Group'], message : '{VALUE} is not supported'}},
         comments: [{
             user_id:{type: mongoose.Schema.Types.ObjectId, ref: 'user'},
             comment: {type: String},
@@ -24,10 +24,11 @@ const listSchema = new Schema({
                 Date
             },
             asigned:{
-                type: String
-            },
+                type: Boolean,
+                default: false,
+            },  
             status:{
-                type: String, default: "Standard", enum : {values: ['Standard', 'Group'], message : '{VALUE} is not supported'}
+                type: String, default: "Pending", enum : {values: ['Pending', 'Completed'], message : '{VALUE} is not supported'}
             },
             created:{
                 type: Date, default: Date.now()
