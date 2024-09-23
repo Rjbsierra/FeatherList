@@ -5,7 +5,7 @@ const fs = require('fs');
 const { console } = require('inspector');
 const sharp = require('sharp');
 const path = require('path');
-
+const {BadRequestError} = require('../errors')
 
 // (WIP) creates a user
 const addUser = async (req,res)=>{
@@ -66,5 +66,17 @@ const validateUser = async (req,res) =>{
     })
 }
 
+// uptade user from end user
+const updateUser = async (req,res) =>{
+    await User.findOneAndUpdate({_id: req.user.id}, {$set: {password: req.body.password, img: req.body.img}}).then((user)=>{
+        if(!user){
+            throw new BadRequestError('Error encountered: could not find user')
+        }
+        res.status(200).json({msg: 'user updated successfully',user})
+    }).catch((err)=>{
+        throw new BadRequestError(`Error encountered: ${err}`)
+    })
+}
 
-module.exports = {addUser, getAccount, validateUser, getUser}
+
+module.exports = {addUser, getAccount, validateUser, getUser, updateUser}

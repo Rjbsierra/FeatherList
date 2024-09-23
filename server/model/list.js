@@ -21,7 +21,8 @@ const listSchema = new Schema({
                 maxlength: [1000, "can only be below 1000 characters"]
             },
             timer:{
-                Date
+                Date,
+                default: null
             },
             asigned:{
                 type: Boolean,
